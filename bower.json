@@ -1,0 +1,21 @@
+{
+  "name": "tag_rocket",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "backbone": "~1.1.2",
+      "underscore": "~1.6.0",
+      "jquery": "~2.1.1",
+      "requirejs": "~2.1.14",
+      "bootstrap": "~3.1.1",
+      "requirejs-text": "~2.0.12"
+  }
+}

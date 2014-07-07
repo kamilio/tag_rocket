@@ -1,0 +1,22 @@
+<ul class="list-group">
+    <li class="list-group-item list-group-item-success">
+        <%= tag.label() %>
+        <a class="close" href="/"><span aria-hidden="true">×</span><span class="sr-only">Close</span></a>
+    </li>
+    <li class="list-group-item">
+        <span class="badge"><%= tag.positiveSentiment() %></span>
+        Positive mentions
+    </li>
+    <li class="list-group-item">
+        <span class="badge"><%= tag.neutralSentiment() %></span>
+        Neutral mentions
+    </li>
+    <li class="list-group-item">
+        <span class="badge"><%= tag.negativeSentiment() %></span>
+        Negative mentions
+    </li>
+    <li class="list-group-item">
+        <span class="badge"><%= tag.totalSentiments() %></span>
+        <strong>Total mentions</strong>
+    </li>
+</ul>

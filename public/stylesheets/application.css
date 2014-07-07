@@ -1,0 +1,38 @@
+#app span {
+    padding: 6px;
+}
+span a.sentiment-negative {
+    color: #d9534f;
+}
+
+span a.sentiment-positive {
+    color: #5cb85c;
+}
+
+span a.sentiment-neutral {
+    color: #333;
+}
+
+span a.volume-0 {
+    font-size: 14px;
+}
+
+span a.volume-1 {
+    font-size: 18px;
+}
+
+span a.volume-2 {
+    font-size: 22px;
+}
+
+span a.volume-3 {
+    font-size: 28px;
+}
+
+span a.volume-4 {
+    font-size: 34px;
+}
+
+span a.volume-5 {
+    font-size: 44px;
+}
