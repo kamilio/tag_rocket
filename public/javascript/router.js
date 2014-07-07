@@ -5,9 +5,6 @@ define(function (require) {
         routes: {
             "": tagsController.index,
             "tag/:label": tagsController.show
-        },
-
-        start: function () {}
-
+        }
     });
 });

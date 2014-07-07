@@ -5,13 +5,12 @@ define(function (require) {
             var AppRouter = require('router');
             var appRouter = new AppRouter();
             Backbone.history.start({pushState: true});
-            appRouter.start();
         },
         events: {
             'click a': function(e){
                 e.preventDefault();
                 Backbone.history.navigate(e.target.pathname, {trigger: true});
             }
-        }
+        },
     });
 });
