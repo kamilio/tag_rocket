@@ -8,22 +8,14 @@ The ultimate tagging tool. Single page application to display tags provided by n
 git clone https://github.com/kamilio/tag_rocket.git
 cd tag_rocket
 npm install
-bower install
-grunt espress:dev
+node_modules/.bin/grunt bower
+node_modules/.bin/grunt espress:dev
 ```
 
 # Development
 
 Running a test suite
-```
-grunt karma:dev
-```
-
-
-Some packages might be necessary to install globally.
 
 ```
-sudo npm install -g grunt-cli
-sudo npm install -g karma
-sudo npm install -g phantomjs
+node_modules/.bin/grunt karma:dev
 ```
