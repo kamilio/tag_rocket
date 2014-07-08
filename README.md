@@ -1,6 +1,6 @@
 #Tag Rocket [![Build Status](https://travis-ci.org/kamilio/tag_rocket.svg?branch=master)](https://travis-ci.org/kamilio/tag_rocket)
 
-The ultimate open source tagging tool. Simple and powerful single page application to display tags provided by node.js server. Check out the demo or read below to run it on your own machine.
+The ultimate open source tagging tool. Simple and powerful single page application to display tags provided by node.js server. Read below to run it on your own machine.
 
 ## Getting started
 
