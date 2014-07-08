@@ -6,7 +6,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 
 // Serve static assets
-if (app.settings.env === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public_combined'));
 } else {
     app.use(express.static(__dirname + '/public'));

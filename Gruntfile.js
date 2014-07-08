@@ -55,8 +55,11 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('default', ['karma:dev']);
-    grunt.loadNpmTasks('grunt-karma');
+    if (process.env.NODE_ENV !== 'production') {
+        grunt.loadNpmTasks('grunt-karma');
+        grunt.registerTask('default', ['karma:dev']);
+    }
+
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-bower-task');
 };
