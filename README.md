@@ -1,21 +1,29 @@
-#Tag Rocket
+#Tag Rocket [![Build Status](https://travis-ci.org/kamilio/tag_rocket.svg?branch=master)](https://travis-ci.org/kamilio/tag_rocket)
 
-The ultimate tagging tool. Single page application to display tags provided by node.js server.
+The ultimate open source tagging tool. Simple and powerful single page application to display tags provided by node.js server. Check out the demo or read below to run it on your own machine.
 
 ## Getting started
+
+### Cloning the repository
 
 ```
 git clone https://github.com/kamilio/tag_rocket.git
 cd tag_rocket
-npm install
-node_modules/.bin/grunt bower
-node_modules/.bin/grunt espress:dev
 ```
 
-# Development
+### Running the app 
+
+```
+npm install
+npm start
+```
+
+## Development
 
 Running a test suite
 
 ```
-node_modules/.bin/grunt karma:dev
+npm test
 ```
+
+That's all folks.
