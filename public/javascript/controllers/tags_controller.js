@@ -1,19 +1,18 @@
 define(function(require) {
     var $ = require('jquery'), _ = require('underscore'), Backbone = require('backbone');
 
-    var TagCloud = require('collections/tag_cloud');
-    var TagCloudView = require('views/tag_cloud_view');
-
     var errorHandler = function(collection, response, options) {
         alert("Sorry, something went wrong... :( Please check your internet connection.");
     };
 
     var renderTagCloud = function(collection) {
+        var TagCloudView = require('views/tag_cloud_view');
         var tagCloudView = new TagCloudView({collection: collection, el: $("#app")});
         tagCloudView.render();
     };
 
     var fetchTags = function(success_callback) {
+        var TagCloud = require('collections/tag_cloud');
         var tagCloud = new TagCloud();
         tagCloud.fetch({
             success: success_callback,
@@ -23,6 +22,7 @@ define(function(require) {
     };
 
     return {
+        // Renders only tag cloud
         index: function() {
             fetchTags(function(collection) {
                 renderTagCloud(collection);
@@ -30,6 +30,7 @@ define(function(require) {
             });
         },
 
+        // Renders tag cloud and additionally also detail for given tag
         show: function(label) {
             fetchTags(function(collection) {
                 renderTagCloud(collection);

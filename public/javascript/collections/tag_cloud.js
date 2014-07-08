@@ -3,20 +3,25 @@ define(function(require) {
     var Tag = require('models/tag');
     return Backbone.Collection.extend({
         model: Tag,
+
         url: "/topics.json",
+
+        // Handle slightly different format of incoming json then expected by default
         parse: function(response) {
             return response.topics
         },
-        volumes: function() {
-            return this.map(function(tag) { return tag.volume() })
-        },
+
+        // Resolves maximum volume from all members
         volumeMax: function() {
             return _.max(this.volumes());
         },
+
+        // Resolves minimum volume from all members
         volumeMin: function() {
             return _.min(this.volumes());
         },
 
+        // Escalates the maximum and minimum to its members
         setVolumes: function() {
             var max = this.volumeMax();
             var min = this.volumeMin();
@@ -24,6 +29,10 @@ define(function(require) {
                 tag.set('volumeMax', max);
                 tag.set('volumeMin', min);
             })
+        },
+
+        volumes: function() {
+            return this.map(function(tag) { return tag.volume() })
         },
 
         initialize: function() {

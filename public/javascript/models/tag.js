@@ -4,6 +4,7 @@ define(function(require) {
         negativeSentimentThreshold: 40,
         positiveSentimentThreshold: 60,
 
+        // Translates sentiment score into word based on configured thresholds
         sentiment: function() {
             var score = this.get('sentimentScore');
             if (score > this.positiveSentimentThreshold) {
@@ -15,14 +16,12 @@ define(function(require) {
             }
         },
 
+        // Css class
         sentimentClass: function() {
           return "sentiment-"+this.sentiment();
         },
 
-        volume: function() {
-           return this.get('volume');
-        },
-
+        // Resolves relative volume from 0 to 5 based on maximum and minimum given by the parent collection
         relativeVolume: function() {
             var min = this.get('volumeMin');
             var max = this.get('volumeMax');
@@ -41,6 +40,7 @@ define(function(require) {
             return Math.floor(result);
         },
 
+        // Css class, example: volume-2
         relativeVolumeClass: function() {
             return "volume-" + this.relativeVolume().toString();
         },
@@ -61,8 +61,13 @@ define(function(require) {
             return this.sentimentValues().neutral || 0
         },
 
+        // Calculates the sum of all given sentiments
         totalSentiments: function() {
             return this.neutralSentiment() + this.positiveSentiment() + this.negativeSentiment();
+        },
+
+        volume: function() {
+            return this.get('volume');
         },
 
         label: function() {

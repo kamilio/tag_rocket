@@ -1,14 +1,19 @@
+// Very simple express web server serving a static assets and handling basic routing
+
 var express = require('express');
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
-
 app.set('port', process.env.PORT || 3000);
 
+// Serve static assets
+app.use(express.static(__dirname + '/public'));
+
+// http://localhost:3000/
 app.get('/',function(req,res){
     res.sendfile('public/index.html');
 });
 
+// http://localhost:3000/tag/Berlin
 app.get('/tag/:name',function(req,res){
     res.sendfile('public/index.html');
 });

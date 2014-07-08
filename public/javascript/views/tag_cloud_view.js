@@ -17,6 +17,7 @@ define(function(require){
             this.collection.forEach(this.addOne, this);
         },
 
+        // Delegates rendering of elements to its members
         render: function() {
             this.addAll();
             return this;
