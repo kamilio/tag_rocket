@@ -6,7 +6,11 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 
 // Serve static assets
-app.use(express.static(__dirname + '/public'));
+if (app.settings.env === 'production') {
+    app.use(express.static(__dirname + '/public_combined'));
+} else {
+    app.use(express.static(__dirname + '/public'));
+}
 
 // http://localhost:3000/
 app.get('/',function(req,res){
