@@ -35,7 +35,7 @@ define(function(require) {
             fetchTags(function(collection) {
                 renderTagCloud(collection);
 
-                var tag = collection.findWhere({label: label});
+                var tag = collection.findWhere({label: decodeURIComponent(label)});
                 if (tag === undefined) { return errorHandler(); }
                 var TagDetailView = require('views/tag_detail_view');
                 var tagDetailView = new TagDetailView({model: tag, el: $("#detail")});
