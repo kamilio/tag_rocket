@@ -15,7 +15,7 @@ define(['views/tag_view'], function(TagView) {
 
             it('should render the view', function() {
                 expect(this.view.$el.html()).toContain("Berlin");
-            })
+            });
         })
     });
 });

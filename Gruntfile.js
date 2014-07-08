@@ -1,20 +1,6 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        express: {
-            options: {
-                script: 'server.js'
-            },
-            dev: {
-                options: {
-                    background: false
-                }
-            }
-        },
-        bower: {
-            install: {}
-        },
-
         karma: {
             options: {
                 configFile: 'karma.conf.js'
@@ -29,10 +15,48 @@ module.exports = function(grunt) {
                 browsers: ['PhantomJS']
             }
 
+        },
+        requirejs: {
+            compile: {
+                options: {
+                    appDir: "public",
+                    baseUrl: "javascript",
+                    mainConfigFile: 'public/javascript/main.js',
+                    dir: "public_combined",
+                    removeCombined: true,
+                    keepBuildDir: false,
+                    optimize: "uglify2",
+                    modules: [ { name: "main" } ]
+                }
+            }
+        },
+
+        bower: {
+            install: {
+                options: {
+                    targetDir: 'public/libs',
+                    layout: 'byType',
+                    install: true,
+                    verbose: false,
+                    cleanTargetDir: true,
+                    cleanBowerDir: true,
+                    bowerOptions: {}
+                }
+            }
         }
     });
 
-    grunt.loadNpmTasks('grunt-express-server');
-    grunt.loadNpmTasks('grunt-bower-task');
+    grunt.registerTask('build', 'Build the app for specific environment', function() {
+        if (process.env.NODE_ENV === 'production') {
+            grunt.task.run('bower:install', 'requirejs:compile');
+        } else { // development
+            grunt.task.run('bower:install');
+        }
+
+    });
+
+    grunt.registerTask('default', ['karma:dev']);
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-bower-task');
 };

@@ -1,9 +1,9 @@
 require.config({
     paths: {
-        "jquery": "../libs/jquery/dist/jquery",
+        "jquery": "../libs/jquery/jquery",
         "underscore": "../libs/underscore/underscore",
         "backbone": "../libs/backbone/backbone",
-        "bootstrap": "../libs/bootstrap/dist/js/bootstrap",
+        "bootstrap": "../libs/bootstrap/bootstrap",
         "text": "../libs/requirejs-text/text"
     }
 });

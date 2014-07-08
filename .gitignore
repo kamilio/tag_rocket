@@ -25,7 +25,11 @@ build/Release
 node_modules
 
 # Bower libraries
+bower_components
 public/libs
 
 # IDE
 .idea
+
+# Compiled javascript
+public_combined

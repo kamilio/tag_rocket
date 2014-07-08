@@ -16,11 +16,16 @@ define(['views/tag_detail_view'], function(TagDetailView) {
 
             it('should render the view', function() {
                 expect(this.view.$el.html()).toContain("Berlin");
-            })
+            });
 
             it('should have total sentiment', function() {
                 expect(this.view.$el.html()).toContain("162");
-            })
+            });
+
+            it('should hide itself', function() {
+                this.view.hide({preventDefault: function(){}, target: {}});
+                expect(this.view.$el.html()).toNotContain("Berlin");
+            });
         })
     });
 });

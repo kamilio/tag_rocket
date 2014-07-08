@@ -17,7 +17,7 @@ require.config({
   baseUrl: '/base',
 
     paths: {
-        "jquery": "public/libs/jquery/dist/jquery",
+        "jquery": "public/libs/jquery/jquery",
         "underscore": "public/libs/underscore/underscore",
         "backbone": "public/libs/backbone/backbone",
         "text": "public/libs/requirejs-text/text",
